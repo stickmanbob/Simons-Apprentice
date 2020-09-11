@@ -37,7 +37,8 @@ export default class Game extends React.Component{
         this.handleClick = this.handleClick.bind(this); 
         this.fetchSprites = this.fetchSprites.bind(this); 
         this.playSequence = this.playSequence.bind(this); 
-        this.resetGame = this.resetGame.bind(this); 
+        this.resetGame = this.resetGame.bind(this);
+        this.nextRound = this.nextRound.bind(this); 
     }
 
     componentDidMount(){
