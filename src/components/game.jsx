@@ -105,10 +105,11 @@ export default class Game extends React.Component{
 
         this.setState({
             currentSprite: null,
-            gameState: "start",
-            score: this.state.score + 1,
+            gameState: "",
             currentGuess: 0
         })
+
+        this.playSequence(); 
     }
 
     resetGame(){
@@ -154,7 +155,8 @@ export default class Game extends React.Component{
                     
                     this.setState({
                         gameState: "interRound",
-                        currentSprite: null
+                        currentSprite: null,
+                        score: this.state.score + 1
                     });
                 
                 // Otherwise, let the user keep summoning elementals

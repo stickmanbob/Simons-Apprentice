@@ -19,7 +19,7 @@ export default function InterRound({nextRound, rank}){
             <h1>Good Job, Apprentice</h1>
             <h2>You are now rank {rank}</h2>
 
-            <button onClick={nextRound}>Next Round</button>
+            <button onClick={nextRound}>Next Spell</button>
         </div>
     )
 }
