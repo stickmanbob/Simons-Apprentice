@@ -11,13 +11,15 @@
 
   //Components
     import Game from "./components/game";
+import HighScores from './components/highScores';
 
 
 //Main
 function App() {
   return (
     <div className="App">
-        <Game/>
+        {/* <Game/> */}
+        <HighScores/>
     </div>
   );
 }
