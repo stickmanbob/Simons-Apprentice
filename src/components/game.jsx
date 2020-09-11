@@ -8,6 +8,8 @@
 // Imports
 
 import React from 'react';
+import GameOver from './gameOver';
+import InterRound from './interRound';
 
 
 //Main
@@ -23,7 +25,10 @@ export default class Game extends React.Component{
         this.state = {
             currentSprite: null,
             loaded:false,
-            sequence: ["red","blue"]
+            sequence: ["red"],
+            currentGuess: 0,
+            gameState: "start",
+            score: 0
         }
 
         
@@ -32,6 +37,7 @@ export default class Game extends React.Component{
         this.handleClick = this.handleClick.bind(this); 
         this.fetchSprites = this.fetchSprites.bind(this); 
         this.playSequence = this.playSequence.bind(this); 
+        this.resetGame = this.resetGame.bind(this); 
     }
 
     componentDidMount(){
@@ -68,35 +74,97 @@ export default class Game extends React.Component{
     }
 
     async playSequence(){
+
         //Play the current sequence
         for(let i = 0; i < this.state.sequence.length ; i++){
 
-            this.setState({currentSprite: this.sprites[this.state.sequence[i]]});
+            this.setState({ currentSprite: this.sprites[this.state.sequence[i]], gameState: "input" } );
             await this.sleep(1300);
+            this.setState({ currentSprite: null,})
+            await this.sleep(400); 
             
         }
-        this.setState({currentSprite: null})
-        console.log("done")
+        
     }
 
     sleep(time) {
         return new Promise(res => setTimeout(res, time));
     }
 
+    nextGuess(){
+        this.setState({
+            currentSprite: null,
+            currentGuess: this.state.currentGuess + 1,
+        })
+    }
+
+    nextRound(){
+
+        this.updateSequence(); 
+
+        this.setState({
+            currentSprite: null,
+            gameState: "start",
+            score: this.state.score + 1,
+            currentGuess: 0
+        })
+    }
+
+    resetGame(){
+        this.setState({
+            currentSprite: null,
+            sequence: ["red"],
+            currentGuess: 0,
+            gameState: "start",
+            score: 0
+        })
+    }
+
+    gameOver(){
+        this.setState({
+            gameState: "gameOver",
+        })
+    }
+
     handleClick(buttonColor){
         
         // Return an event handler that has access to the buttonColor parameter
-        return (e) =>{
-
-            e.preventDefault()
-
-            // Decide which sprite to render next based on buttonColor parameter
-            let newSprite = this.sprites[buttonColor] || null;
+        return async (e) =>{
             
-            // Update the current sprite in state
-            this.setState({
-                currentSprite: newSprite,
-            })
+            e.preventDefault();
+
+            var { sequence, currentGuess } = this.state;
+
+            // Check if the input is correct
+            if(buttonColor === sequence[currentGuess]){ // If its a correct guess:
+                
+                // Decide which sprite to render next based on buttonColor parameter
+                let newSprite = this.sprites[buttonColor] || null;
+
+                // Update the current sprite in state
+                this.setState({
+                    currentSprite: newSprite,
+                })
+
+                await this.sleep(1300);
+
+                // If that was the last item, go to the inter round screen
+                if(currentGuess === sequence.length -1){
+                    
+                    this.setState({
+                        gameState: "interRound",
+                        currentSprite: null
+                    });
+                
+                // Otherwise, let the user keep summoning elementals
+                } else {
+                    this.nextGuess(); 
+                }
+            
+            } else { // On a wrong guess, end the game
+                this.gameOver();
+            }
+   
 
         }
         
@@ -105,13 +173,19 @@ export default class Game extends React.Component{
     render(){
         if(!this.state.loaded) return null;
 
+        if(this.state.gameState === 'gameOver') return <GameOver rank={this.state.score} reset={this.resetGame}/>
+
+        let gameState = this.state.gameState;
+        let rank = this.state.score; 
+
         return(
             
             <section id="game">
 
                 <div className="sprite-window">
                     {this.state.currentSprite}
-                    <button onClick={this.playSequence}>play</button>
+                    {gameState === 'interRound' && <InterRound rank={rank} nextRound={this.nextRound}/>}
+                    {gameState === "start" && <button onClick={this.playSequence}>play</button>}
                 </div>
 
                 <div className="game-buttons">
@@ -130,6 +204,10 @@ export default class Game extends React.Component{
                     <button value="blue" onClick={this.handleClick("blue")}>
                         Blue
                     </button>
+
+                    <div>
+                        <span>Apprentice Rank: {rank}</span>
+                    </div>
                 </div>
             </section>
         );
