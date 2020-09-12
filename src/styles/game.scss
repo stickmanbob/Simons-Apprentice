@@ -21,10 +21,14 @@
 
             margin: 0px 10px; 
 
-            filter: brightness(95%)
+            filter: brightness(50%)
     }
 
-    .orb:active{
+    .orb.enable{
+        filter: brightness(95%)
+    }
+
+    .orb.enable:active{
         // border: 1px solid black;  
         // border-radius: 50%; 
         // background-color: black;
@@ -32,7 +36,7 @@
         filter:brightness(115%); 
     }
 
-    .orb:hover{
+    .orb.enable:hover{
         filter: brightness(105%);
         cursor: pointer;
     }

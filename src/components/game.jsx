@@ -252,7 +252,7 @@ export default class Game extends React.Component{
         }
         
 
-        let disableButtons = this.state.disableInputs ? "disable" : ""
+        let enableButtons = this.state.disableInputs ? "" : "enable"
 
         let message = this.selectMessage();
 
@@ -266,15 +266,15 @@ export default class Game extends React.Component{
                     {mainWindow}
                 </div>
 
-                <div className={`game-buttons ${disableButtons}`}>
+                <div className="game-buttons">
                     
-                    <img className="orb red" src={require("../assets/redOrb.png")} onClick={this.handleInput("red")}/>
+                    <img className={`orb red ${enableButtons}`} src={require("../assets/redOrb.png")} onClick={this.handleInput("red")}/>
 
-                    <img className="orb green" src={require("../assets/greenOrb.png")} onClick={this.handleInput("green")}/>
+                    <img className={`orb green ${enableButtons}`} src={require("../assets/greenOrb.png")} onClick={this.handleInput("green")}/>
                         
-                    <img className="orb yellow" src={require("../assets/yellowOrb.png")} onClick={this.handleInput("yellow")}/>
+                    <img className={`orb yellow ${enableButtons}`} src={require("../assets/yellowOrb.png")} onClick={this.handleInput("yellow")}/>
 
-                    <img className="orb blue" src={require("../assets/blueOrb.png")} onClick={this.handleInput("blue")}/>
+                    <img className={`orb blue ${enableButtons}`} src={require("../assets/blueOrb.png")} onClick={this.handleInput("blue")}/>
 
                 </div>
                 <div>
