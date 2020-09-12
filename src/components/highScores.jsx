@@ -7,6 +7,7 @@
 
 // Imports
 import React from "react";
+import { Link } from "react-router-dom";
 
 //Main
 
@@ -17,7 +18,7 @@ export default function HighScores(){
     console.log(highScoreList); 
     return(
         <section id="high-scores">
-            <h1>High Scores</h1>
+            <h1>Honored Apprentices</h1>
 
             {
                 highScoreList.map((player) => {
@@ -27,6 +28,8 @@ export default function HighScores(){
                     </div>
                 })
             }
+
+            <Link to="/game">Play Again!</Link>
         </section>
 
     )

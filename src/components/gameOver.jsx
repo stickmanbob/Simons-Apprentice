@@ -11,6 +11,7 @@
 
 import React from 'react';
 import { render } from '@testing-library/react';
+import { Link } from 'react-router-dom';
 
 // Main
 
@@ -62,7 +63,11 @@ export default class GameOver extends React.Component{
 
         if (!this.state.showHSInput){
             return (
-                <button onClick={this.props.reset}>Try Again</button>
+                <nav>
+                    <button onClick={this.props.reset}>Try Again</button>
+                    <Link to="/high-scores">Honor Scroll</Link>
+                </nav>
+                
             )
         } else {
             return (
@@ -104,7 +109,7 @@ export default class GameOver extends React.Component{
         
         let message;
         if(highScore) {
-            message = <h2>but you made the high score list at apprentice rank {rank}!</h2>
+            message = <h2>but you made the Honor Scroll at apprentice rank {rank}!</h2>
         } else{
             message = <h2>but you got to apprentice rank {rank}</h2>
         }
