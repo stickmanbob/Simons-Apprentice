@@ -14,6 +14,9 @@
 
   display: flex;
 
+  // align-items: center;
+  justify-content: center;
+
   background-image: url("../assets/background-desktop.jpg");
   background-size: cover; 
 
@@ -23,7 +26,11 @@
 }
 
 .App > section{
-  margin: 0px auto;
+
+    width: 650px;
+    min-height: 600px;
+
+    margin: 0px auto;
 
     margin-top: 30px;
 

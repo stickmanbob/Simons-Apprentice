@@ -264,7 +264,7 @@ export default class Game extends React.Component{
 
         let rank = this.state.score;
 
-        if(!this.state.loaded) return (
+        if(!this.props.loaded) return (
             <section>
                 <h1>Loading...</h1>
             </section>

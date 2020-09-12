@@ -14,22 +14,27 @@
     import Game from "./components/game";
 
     import HighScores from './components/highScores';
-import { IMAGE_URLS } from './utils/constants';
+    import { GAME_IMAGE_URLS, MENU_IMG_URLS } from './utils/constants';
 
 
 
 //Main
 function App() {
 
-  var [loaded, setLoaded] = useState(false);
+  var [menuLoaded, setMenuLoaded] = useState(false);
+  var [gameLoaded, setGameLoaded] = useState(false);
 
   useEffect(()=>{
-    if(!loaded){
-      preloadImages(IMAGE_URLS, ()=>setLoaded(true))
+    if(!menuLoaded){
+      preloadImages(MENU_IMG_URLS, ()=>setMenuLoaded(true));
+    }
+
+    if(!gameLoaded){
+      preloadImages(GAME_IMAGE_URLS, ()=>setGameLoaded(true));
     }
   })
 
-  if(!loaded){
+  if(!menuLoaded){
     return (
       <div>Loading...</div>
     )
@@ -42,7 +47,7 @@ function App() {
         <Switch>
 
           <Route path="/game">
-            <Game />
+            <Game loaded={gameLoaded}/>
           </Route>
           
           <Route path="/high-scores">

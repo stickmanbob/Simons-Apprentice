@@ -18,11 +18,11 @@ export const COLORS = ["red", "blue", "yellow", "green"];
 
 //Main Menu asset paths
 export const MENU_IMG_URLS = [
-    
+    require("../assets/background-desktop.jpg")
 ]
 
 // All game image asset paths
-export const IMAGE_URLS = [
+export const GAME_IMAGE_URLS = [
     require("../assets/fizzle.gif"),
     require("../assets/redSprite.gif"),
     require("../assets/yellowSprite.gif"),
