@@ -9,7 +9,7 @@
 
   //Utils
   import React from 'react';
-  import { SIMON_GIF_LENGTH, PLAYER_GIF_LENGTH } from '../constants';
+  import { SIMON_GIF_LENGTH, PLAYER_GIF_LENGTH, FIZZLE_LENGTH } from '../constants';
 
   //Components
   import GameOver from './gameOver';
@@ -59,7 +59,8 @@ export default class Game extends React.Component{
             red: <img src={require("../assets/redSprite.gif")} alt="red" />,
             yellow: <img src={require("../assets/yellowSprite.gif")} alt="yellow" />,
             green: <img src={require("../assets/greenSprite.gif")} alt="green" />,
-            blue: <img src={require("../assets/blueSprite.gif")} alt="blue" />
+            blue: <img src={require("../assets/blueSprite.gif")} alt="blue" />,
+            fizzle: <img className="fizzle" src={require("../assets/fizzle.gif")} alt="fizzle!"/>,
         }
     
     }
@@ -149,10 +150,19 @@ export default class Game extends React.Component{
         })
     }
 
-    gameOver(){
+    async gameOver(){
+        
+        //Play the fizzle animation
+        this.setState({
+            currentSprite: this.sprites.fizzle,
+            disableInputs: true
+        })
+
+        await this.sleep(FIZZLE_LENGTH);
+
+        //Show the game over screen
         this.setState({
             gameState: "gameOver",
-            disableInputs: true 
         })
     }
 
@@ -246,11 +256,11 @@ export default class Game extends React.Component{
         switch (gameState) {
 
             case 'start':
-                let startButton = <img className="start-button" src={require("../assets/pentagram.png")} onClick={this.playSequence}/>;
+                let startButton = <img className="start-button" src={require("../assets/pentagram.png")} onClick={this.playSequence} alt="start"/>;
                 return <SummoningCircle contents={startButton} />
 
             case 'interRound':
-                let nextButton = <img className="start-button" src={require("../assets/pentagram.png")} onClick={this.nextRound} />;
+                let nextButton = <img className="start-button" src={require("../assets/pentagram.png")} onClick={this.nextRound} alt="next round"/>;
                 return <SummoningCircle contents={nextButton} />;
 
             default:
@@ -285,13 +295,13 @@ export default class Game extends React.Component{
 
                 <div className="game-buttons">
                     
-                    <img className={`orb red ${enableButtons}`} draggable="false" src={require("../assets/redOrb.png")} onClick={this.handleInput("red")}/>
+                    <img className={`orb red ${enableButtons}`} draggable="false" src={require("../assets/redOrb.png")} onClick={this.handleInput("red")} alt="red"/>
 
-                    <img className={`orb green ${enableButtons}`} draggable="false" src={require("../assets/greenOrb.png")} onClick={this.handleInput("green")}/>
+                    <img className={`orb green ${enableButtons}`} draggable="false" src={require("../assets/greenOrb.png")} onClick={this.handleInput("green")} alt="green"/>
                         
-                    <img className={`orb yellow ${enableButtons}`} draggable="false" src={require("../assets/yellowOrb.png")} onClick={this.handleInput("yellow")}/>
+                    <img className={`orb yellow ${enableButtons}`} draggable="false" src={require("../assets/yellowOrb.png")} onClick={this.handleInput("yellow")} alt="blue"/>
 
-                    <img className={`orb blue ${enableButtons}`} draggable="false" src={require("../assets/blueOrb.png")} onClick={this.handleInput("blue")}/>
+                    <img className={`orb blue ${enableButtons}`} draggable="false" src={require("../assets/blueOrb.png")} onClick={this.handleInput("blue")} alt="yellow"/>
 
                 </div>
                 <div>
