@@ -8,4 +8,18 @@
     .game-buttons.disable button:hover{
         // background-color: inherit;
     }
+
+    .summoning-circle{
+        min-height: 400px;
+        min-width: 400px;
+        
+        background-image: url("../../src/assets/circle.jpg");
+        background-size: contain;
+        border-radius: 50%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }
