@@ -15,11 +15,13 @@ export default function MainMenu(){
         <section id="main-menu">
             <h1>Welcome, Apprentice</h1>
             
-            <Link to="/game">Play</Link>
-            
-            <Link to="/instructions">Instructions</Link>
+            <nav>
+                <Link to="/game">Play</Link>
+                
+                <Link to="/instructions">Instructions</Link>
 
-            <Link to="/high-scores">High Scores</Link>
+                <Link to="/high-scores">High Scores</Link>
+            </nav>
         </section>
     )
 }
