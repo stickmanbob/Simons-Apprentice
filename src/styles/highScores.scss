@@ -1,0 +1,24 @@
+#high-scores{
+
+    h1{
+        margin-bottom: 30px;
+    }
+    .table-heading{
+        columns: 3;
+        column-gap: 50px;
+        // text-align: center;
+        // vertical-align: baseline;
+    }
+
+    .score{
+        columns: 3;
+        column-gap: 50px;
+        // text-align: center;
+        // vertical-align: baseline;
+
+        h3{
+            margin: 0px;
+        }
+
+    }
+}

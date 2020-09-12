@@ -1,3 +1,25 @@
 #game-over{
     width: 500px;
+
+    nav{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        div, a{
+            font-weight: 300;
+            font-family: Immortal, sans-serif;
+        }
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        input{
+            font-weight: 300;
+            font-family: Immortal, sans-serif;
+        }
+    }
 }

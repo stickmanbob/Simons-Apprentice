@@ -20,16 +20,17 @@ export default function HighScores(){
         <section id="high-scores">
             <h1>Honored Apprentices</h1>
 
+            <div className="table-heading"><h2>Position</h2><h2>Name</h2> <h2>Rank</h2></div>
             {
                 highScoreList.map((player, idx) => {
-                    return <div key={idx}>
-                        <h3>{player.name}</h3>
-                        <h3>{player.rank}</h3>
+                    
+                    return <div className="score" key={idx}>
+                        <h3>{idx+1}</h3> <h3>{player.name}</h3> <h3>{player.rank}</h3>
                     </div>
                 })
             }
 
-            <Link to="/game">Play Again!</Link>
+            <Link to="/game" className="no-text-outline">Play Again!</Link>
         </section>
 
     )

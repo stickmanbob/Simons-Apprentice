@@ -64,8 +64,8 @@ export default class GameOver extends React.Component{
         if (!this.state.showHSInput){
             return (
                 <nav>
-                    <button onClick={this.props.reset}>Try Again</button>
-                    <Link to="/high-scores">Honor Scroll</Link>
+                    <div onClick={this.props.reset} className="no-text-outline">Try Again</div>
+                    <Link to="/high-scores" className="no-text-outline">Honor Scroll</Link>
                 </nav>
                 
             )
@@ -73,8 +73,9 @@ export default class GameOver extends React.Component{
             return (
 
                 <form>
-                    <input placeholder="Enter your name, Apprentice" onChange={this.handleNameChange} value={this.state.name} type="text"/>
-                    <button type="submit" onClick={this.updateHighScores}>Accept</button>
+                    <h3>Enter your name, Apprentice</h3>
+                    <input className="no-text-outline" onChange={this.handleNameChange} value={this.state.name} type="text"/>
+                    <input className="no-text-outline" type="submit" onClick={this.updateHighScores}/>
                 </form>
             )
         }
@@ -109,9 +110,9 @@ export default class GameOver extends React.Component{
         
         let message;
         if(highScore) {
-            message = <h3>...but you made the Honor Scroll for reaching apprentice rank {rank}!</h3>
+            message = <h3>...but you made the Honor Scroll for reaching Rank {rank}!</h3>
         } else{
-            message = <h3>...but you reached apprentice rank {rank}!</h3>
+            message = <h3>...but you reached Apprentice Rank {rank}!</h3>
         }
 
         return (
@@ -120,8 +121,6 @@ export default class GameOver extends React.Component{
                 <h1>You Fizzled the Spell!</h1>
 
                 {message} 
-
-
 
                 {this.navButtons()}
             </section>
