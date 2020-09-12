@@ -1,5 +1,13 @@
 #game{ 
 
+    .message-box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 115px; 
+    }
+
     .game-buttons{
         
         display: flex;
@@ -78,9 +86,17 @@
 
     //Mobile values
     @media (max-width: 600px) {
+
+        .message-box{
+            min-height: 90px;
+        }
         .summoning-circle, .start-button, .fizzle{
             height: 250px;
             width: 250px;
+        }
+
+        .start-button{
+            filter: brightness(100%);
         }
 
         .summoning-circle{
@@ -110,7 +126,8 @@
 
         .orb{
             width: 90px;
-            height: 90px; 
+            height: 90px;
+            filter: brightness(100%);
         }
 
         @media (min-height: 700px) {

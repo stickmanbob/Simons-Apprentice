@@ -280,8 +280,10 @@ export default class Game extends React.Component{
         return(
             
             <section id="game">
-
-                {message}
+                <div className="message-box">
+                    {message}
+                </div>
+                
 
                 <div className="main-window">
                     {mainWindow}

@@ -52,12 +52,30 @@ function App() {
     )
   }
 
+  // Don't show the header on the game screen if the device is too short
+  let header = <Header />;
+  console.log(window.innerHeight)
+  if(window.innerHeight < 600){
+    header = null;
+  }
+
   return (
 
     <div className="App">
-      <Header/>
-      
       <HashRouter>
+        <Switch>
+
+          <Route path="/game">
+            {header}
+          </Route>
+
+          <Route path="/">
+            <Header />
+          </Route> 
+          
+        </Switch>
+      
+      
         <Switch>
 
           <Route path="/game">
