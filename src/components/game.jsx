@@ -9,8 +9,8 @@
 
   //Utils
   import React from 'react';
-  import { SIMON_GIF_LENGTH, PLAYER_GIF_LENGTH, FIZZLE_LENGTH, COLORS, IMAGE_URLS } from '../utls/constants';
-  import preloadImages from "../utls/imageLoader";
+  import { SIMON_GIF_LENGTH, PLAYER_GIF_LENGTH, FIZZLE_LENGTH, COLORS, IMAGE_URLS } from '../utils/constants';
+  import preloadImages from "../utils/imageLoader";
 
   //Components
   import GameOver from './gameOver';
@@ -30,7 +30,7 @@ export default class Game extends React.Component{
         //Set inital game state
         this.state = {
             currentSprite: null,
-            loaded:false,
+            loaded:true,
             sequence: ["red"],
             currentGuess: 0,
             gameState: "start",
@@ -38,37 +38,23 @@ export default class Game extends React.Component{
             disableInputs: true 
         }
 
-        
-
-        // Function Bindings
-        this.handleInput = this.handleInput.bind(this); 
-        this.fetchSprites = this.fetchSprites.bind(this); 
-        this.playSequence = this.playSequence.bind(this); 
-        this.resetGame = this.resetGame.bind(this);
-        this.nextRound = this.nextRound.bind(this); 
-    }
-
-    componentDidMount(){
-        this.fetchSprites();   
-    }
-
-    fetchSprites(){
-
-        // Fetch all sprites needed for gameplay and add them to the browser cache
-
-        preloadImages(IMAGE_URLS, ()=> this.setState({ loaded: true }))
-
-
         // Create references to sprites we will use here
         this.sprites = {
             red: <img src={require("../assets/redSprite.gif")} alt="red" />,
             yellow: <img src={require("../assets/yellowSprite.gif")} alt="yellow" />,
             green: <img src={require("../assets/greenSprite.gif")} alt="green" />,
             blue: <img src={require("../assets/blueSprite.gif")} alt="blue" />,
-            fizzle: <img className="fizzle" src={require("../assets/fizzle.gif")} alt="fizzle!"/>,
+            fizzle: <img className="fizzle" src={require("../assets/fizzle.gif")} alt="fizzle!" />,
         }
-    
+        
+
+        // Function Bindings
+        this.handleInput = this.handleInput.bind(this);  
+        this.playSequence = this.playSequence.bind(this); 
+        this.resetGame = this.resetGame.bind(this);
+        this.nextRound = this.nextRound.bind(this); 
     }
+
 
     updateSequence(){
         

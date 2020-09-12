@@ -16,7 +16,12 @@ export const FIZZLE_LENGTH = 1600;
 // Valid colors
 export const COLORS = ["red", "blue", "yellow", "green"]; 
 
-// All image asset paths
+//Main Menu asset paths
+export const MENU_IMG_URLS = [
+    
+]
+
+// All game image asset paths
 export const IMAGE_URLS = [
     require("../assets/fizzle.gif"),
     require("../assets/redSprite.gif"),
