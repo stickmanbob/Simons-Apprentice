@@ -105,13 +105,13 @@ export default class GameOver extends React.Component{
     render(){
 
         const { rank } = this.props;
-        let { showHSInput, highScore, name } = this.state;
+        let { highScore } = this.state;
         
         let message;
         if(highScore) {
-            message = <h2>but you made the Honor Scroll at apprentice rank {rank}!</h2>
+            message = <h2>but you made the Honor Scroll for reaching apprentice rank {rank}!</h2>
         } else{
-            message = <h2>but you got to apprentice rank {rank}</h2>
+            message = <h2>but you reached apprentice rank {rank}!</h2>
         }
 
         return (

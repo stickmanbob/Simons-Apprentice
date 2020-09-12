@@ -214,8 +214,12 @@ export default class Game extends React.Component{
                 );
             case "player-turn":
                 return(
-                    <h1>Summon the Elementals in the Correct Order</h1>
+                    <h1>Use the Orbs to Summon the Elementals in the Correct Order</h1>
                 );
+            case "start":
+                return (
+                    <h1>We will begin when you are ready</h1>
+                )
             default:
                 return null;
         }
@@ -235,7 +239,8 @@ export default class Game extends React.Component{
                 return <GameOver rank={this.state.score} reset={this.resetGame} />;
 
             case 'start':
-                mainWindow = <button onClick={this.playSequence}>Begin Spell!</button>;
+                let startButton = <button onClick={this.playSequence}>Begin Spell!</button>;
+                mainWindow = <SummoningCircle sprite={startButton} />
                 break;
 
             case 'interRound':
@@ -263,25 +268,17 @@ export default class Game extends React.Component{
 
                 <div className={`game-buttons ${disableButtons}`}>
                     
-                    <button onClick={this.handleInput("red")}>
-                        Red
-                    </button>
+                    <img className="orb red" src={require("../assets/redOrb.png")} onClick={this.handleInput("red")}/>
 
-                    <button  onClick={this.handleInput("green")}>
-                        Green
-                    </button>
+                    <img className="orb green" src={require("../assets/greenOrb.png")} onClick={this.handleInput("green")}/>
                         
-                    <button onClick={this.handleInput("yellow")}>
-                        Yellow
-                    </button>
+                    <img className="orb yellow" src={require("../assets/yellowOrb.png")} onClick={this.handleInput("yellow")}/>
 
-                    <button onClick={this.handleInput("blue")}>
-                        Blue
-                    </button>
+                    <img className="orb blue" src={require("../assets/blueOrb.png")} onClick={this.handleInput("blue")}/>
 
-                    <div>
-                        <span>Apprentice Rank: {rank}</span>
-                    </div>
+                </div>
+                <div>
+                    <span>Apprentice Rank: {rank}</span>
                 </div>
             </section>
         );
