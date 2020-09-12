@@ -221,13 +221,18 @@ export default class Game extends React.Component{
                 );
             case "start":
                 return (
-                    <h1>We will begin when you are ready</h1>
+                    <div>
+                        <h1>We will begin when you are ready</h1>
+                        <h3>Touch the red pentagram to begin</h3>
+                    </div>
+                    
                 )
             case "interRound":
                 return(
                     <div>
-                        <h1>Good Job, Apprentice</h1>
-                        <h2>You are now rank {this.state.score}</h2>
+                        <h1>Good Job, Apprentice!</h1>
+                        <h2>You have reached Rank {this.state.score}</h2>
+                        <h3>Touch the red pentagram to continue</h3>
                     </div>
                 )
             default:
@@ -239,15 +244,13 @@ export default class Game extends React.Component{
         let gameState = this.state.gameState;
 
         switch (gameState) {
-            case 'gameOver':
-                return <GameOver rank={this.state.score} reset={this.resetGame} />;
 
             case 'start':
-                let startButton = <button onClick={this.playSequence}>Begin Spell!</button>;
+                let startButton = <img className="start-button" src={require("../assets/pentagram.png")} onClick={this.playSequence}/>;
                 return <SummoningCircle contents={startButton} />
 
             case 'interRound':
-                let nextButton = <button onClick={this.nextRound}>Next Spell</button>;
+                let nextButton = <img className="start-button" src={require("../assets/pentagram.png")} onClick={this.nextRound} />;
                 return <SummoningCircle contents={nextButton} />;
 
             default:
@@ -261,6 +264,8 @@ export default class Game extends React.Component{
         let rank = this.state.score;
 
         if(!this.state.loaded) return null;
+
+        if (this.state.gameState === "gameOver") return <GameOver rank={this.state.score} reset={this.resetGame} />;
 
         let mainWindow = this.selectMainWindow();
 

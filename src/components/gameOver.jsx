@@ -23,7 +23,7 @@ export default class GameOver extends React.Component{
         this.state = {
             showHSInput: false,
             name: "Apprentice",
-            highScore: true
+            highScore: false
         }
 
         // Function Bindings
@@ -45,7 +45,7 @@ export default class GameOver extends React.Component{
 
             this.setState({
                 showHSInput: true,
-                highScoreRank: true
+                highScore: true
             })
 
         }
@@ -109,9 +109,9 @@ export default class GameOver extends React.Component{
         
         let message;
         if(highScore) {
-            message = <h2>but you made the Honor Scroll for reaching apprentice rank {rank}!</h2>
+            message = <h3>...but you made the Honor Scroll for reaching apprentice rank {rank}!</h3>
         } else{
-            message = <h2>but you reached apprentice rank {rank}!</h2>
+            message = <h3>...but you reached apprentice rank {rank}!</h3>
         }
 
         return (
