@@ -124,8 +124,10 @@ export default class Game extends React.Component{
 
     nextRound(){
 
+        // First, add a new elemental to the sequence
         this.updateSequence(); 
 
+        // Reset the game board
         this.setState({
             currentSprite: null,
             gameState: "",
@@ -133,6 +135,7 @@ export default class Game extends React.Component{
             disableInputs: true
         })
 
+        // Play the new sequence
         this.playSequence(); 
     }
 
@@ -220,10 +223,18 @@ export default class Game extends React.Component{
                 return (
                     <h1>We will begin when you are ready</h1>
                 )
+            case "interRound":
+                return(
+                    <div>
+                        <h1>Good Job, Apprentice</h1>
+                        <h2>You are now rank {this.state.score}</h2>
+                    </div>
+                )
             default:
                 return null;
         }
     }
+
 
     render(){
 
@@ -240,14 +251,16 @@ export default class Game extends React.Component{
 
             case 'start':
                 let startButton = <button onClick={this.playSequence}>Begin Spell!</button>;
-                mainWindow = <SummoningCircle sprite={startButton} />
+                mainWindow = <SummoningCircle contents={startButton} />
                 break;
 
             case 'interRound':
-                return <InterRound rank={rank} nextRound={this.nextRound} />
+                let nextButton = <button onClick={this.nextRound}>Next Spell</button>;
+                mainWindow = <SummoningCircle contents={nextButton}/>;
+                break; 
             
             default:
-                mainWindow =  <SummoningCircle sprite={this.state.currentSprite}/>
+                mainWindow =  <SummoningCircle contents={this.state.currentSprite}/>;
             
         }
         
@@ -278,7 +291,7 @@ export default class Game extends React.Component{
 
                 </div>
                 <div>
-                    <span>Apprentice Rank: {rank}</span>
+                    <span className="rank-counter">Apprentice Rank: {rank}</span>
                 </div>
             </section>
         );

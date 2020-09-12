@@ -1,14 +1,21 @@
 @import "./reset.css";
 @import "./game.scss";
 
+@font-face {
+  font-family: Immortal;
+  src: url("../assets/IMMORTAL.ttf");
+}
 
 .App {
-  font-family: sans-serif;
+  font-family: Immortal, sans-serif;
   text-align: center;
-  margin: 6rem 0;
 
-  background-image: url("../assets/background.jpg");
+  display: flex;
+
+  background-image: url("../assets/background-mobile.jpg");
   background-size: cover; 
 
   height: 100vh;
+
+
 }
