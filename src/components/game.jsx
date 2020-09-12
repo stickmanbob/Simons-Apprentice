@@ -13,7 +13,7 @@
 
   //Components
   import GameOver from './gameOver';
-  import InterRound from './interRound';
+  
   import SummoningCircle from './summoningCircle';
 
 //Main
@@ -235,35 +235,34 @@ export default class Game extends React.Component{
         }
     }
 
-
-    render(){
-
+    selectMainWindow() {
         let gameState = this.state.gameState;
-        let rank = this.state.score;
 
-        if(!this.state.loaded) return null;
-
-        let mainWindow;
-
-        switch(gameState){
+        switch (gameState) {
             case 'gameOver':
                 return <GameOver rank={this.state.score} reset={this.resetGame} />;
 
             case 'start':
                 let startButton = <button onClick={this.playSequence}>Begin Spell!</button>;
-                mainWindow = <SummoningCircle contents={startButton} />
-                break;
+                return <SummoningCircle contents={startButton} />
 
             case 'interRound':
                 let nextButton = <button onClick={this.nextRound}>Next Spell</button>;
-                mainWindow = <SummoningCircle contents={nextButton}/>;
-                break; 
-            
+                return <SummoningCircle contents={nextButton} />;
+
             default:
-                mainWindow =  <SummoningCircle contents={this.state.currentSprite}/>;
-            
+                return <SummoningCircle contents={this.state.currentSprite} />;
         }
-        
+    }
+
+
+    render(){
+
+        let rank = this.state.score;
+
+        if(!this.state.loaded) return null;
+
+        let mainWindow = this.selectMainWindow();
 
         let enableButtons = this.state.disableInputs ? "" : "enable"
 
@@ -281,13 +280,13 @@ export default class Game extends React.Component{
 
                 <div className="game-buttons">
                     
-                    <img className={`orb red ${enableButtons}`} src={require("../assets/redOrb.png")} onClick={this.handleInput("red")}/>
+                    <img className={`orb red ${enableButtons}`} draggable="false" src={require("../assets/redOrb.png")} onClick={this.handleInput("red")}/>
 
-                    <img className={`orb green ${enableButtons}`} src={require("../assets/greenOrb.png")} onClick={this.handleInput("green")}/>
+                    <img className={`orb green ${enableButtons}`} draggable="false" src={require("../assets/greenOrb.png")} onClick={this.handleInput("green")}/>
                         
-                    <img className={`orb yellow ${enableButtons}`} src={require("../assets/yellowOrb.png")} onClick={this.handleInput("yellow")}/>
+                    <img className={`orb yellow ${enableButtons}`} draggable="false" src={require("../assets/yellowOrb.png")} onClick={this.handleInput("yellow")}/>
 
-                    <img className={`orb blue ${enableButtons}`} src={require("../assets/blueOrb.png")} onClick={this.handleInput("blue")}/>
+                    <img className={`orb blue ${enableButtons}`} draggable="false" src={require("../assets/blueOrb.png")} onClick={this.handleInput("blue")}/>
 
                 </div>
                 <div>
