@@ -9,16 +9,18 @@
 
   //Utils
   import React from 'react';
-  import { SIMON_GIF_LENGTH, PLAYER_GIF_LENGTH, FIZZLE_LENGTH } from '../constants';
+  import { SIMON_GIF_LENGTH, PLAYER_GIF_LENGTH, FIZZLE_LENGTH, COLORS, IMAGE_URLS } from '../utls/constants';
+  import preloadImages from "../utls/imageLoader";
 
   //Components
   import GameOver from './gameOver';
   
   import SummoningCircle from './summoningCircle';
 
+    
 //Main
 
-const COLORS = ["red", "blue", "yellow", "green"]; 
+
 
 export default class Game extends React.Component{
 
@@ -47,14 +49,17 @@ export default class Game extends React.Component{
     }
 
     componentDidMount(){
-        this.fetchSprites();
-        this.setState({loaded: true})
+        this.fetchSprites();   
     }
 
     fetchSprites(){
 
-        // Fetch the sprites
+        // Fetch all sprites needed for gameplay and add them to the browser cache
 
+        preloadImages(IMAGE_URLS, ()=> this.setState({ loaded: true }))
+
+
+        // Create references to sprites we will use here
         this.sprites = {
             red: <img src={require("../assets/redSprite.gif")} alt="red" />,
             yellow: <img src={require("../assets/yellowSprite.gif")} alt="yellow" />,
@@ -273,7 +278,11 @@ export default class Game extends React.Component{
 
         let rank = this.state.score;
 
-        if(!this.state.loaded) return null;
+        if(!this.state.loaded) return (
+            <section>
+                <h1>Loading...</h1>
+            </section>
+        );
 
         if (this.state.gameState === "gameOver") return <GameOver rank={this.state.score} reset={this.resetGame} />;
 

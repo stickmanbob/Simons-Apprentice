@@ -5,9 +5,10 @@
 //Imports
 
   //Utils
-    import React from 'react';
+    import React, { useState, useEffect } from 'react';
 
     import './styles/index.scss';
+
 
     import { HashRouter, Switch, Route, Link } from 'react-router-dom';
 
@@ -19,6 +20,10 @@ import HighScores from './components/highScores';
 
 //Main
 function App() {
+
+  var [loaded, setLoaded] = useState(false);
+
+
   return (
     <HashRouter>
       <div className="App">
