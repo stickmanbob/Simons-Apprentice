@@ -9,10 +9,10 @@ export default function preloadImages(urls, loadedCallback) {
           
             loadedCount ++;
 
-            console.log("images loaded", loadedCount);
+            // console.log("images loaded", loadedCount);
 
             if(loadedCount === totalImages) {
-                console.log("all images loaded")
+                // console.log("all images loaded")
                 loadedCallback(); 
             }
         }

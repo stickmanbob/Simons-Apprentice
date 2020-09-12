@@ -89,6 +89,8 @@ export default class GameOver extends React.Component{
     updateHighScores(e){
         e.preventDefault();
 
+        if(this.state.name.length === 0) return; 
+
         const name = this.state.name;
         const rank = this.props.rank;
 
