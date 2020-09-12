@@ -14,6 +14,7 @@
   //Components
   import GameOver from './gameOver';
   import InterRound from './interRound';
+  import SummoningCircle from './summoningCircle';
 
 //Main
 
@@ -79,7 +80,7 @@ export default class Game extends React.Component{
     }
 
     async playSequence(){
-
+        if(this.state.gameState !== 'play') this.setState({gameState: 'play'}); 
         //Play the current sequence
         for(let i = 0; i < this.state.sequence.length ; i++){
 
@@ -203,12 +204,30 @@ export default class Game extends React.Component{
     }
 
     render(){
-        if(!this.state.loaded) return null;
-
-        if(this.state.gameState === 'gameOver') return <GameOver rank={this.state.score} reset={this.resetGame}/>
 
         let gameState = this.state.gameState;
-        let rank = this.state.score; 
+        let rank = this.state.score;
+
+        if(!this.state.loaded) return null;
+
+        let mainWindow;
+
+        switch(gameState){
+            case 'gameOver':
+                return <GameOver rank={this.state.score} reset={this.resetGame} />;
+            case 'start':
+                mainWindow = <button onClick={this.playSequence}>Begin Spell!</button>;
+                break;
+            case 'interRound':
+                return <InterRound rank={rank} nextRound={this.nextRound} />
+            
+                default:
+                mainWindow =  <SummoningCircle sprite={this.state.currentSprite}/>
+            
+        }
+
+        console.log(this.state.gameState)
+        
 
         let disableButtons = this.state.disableInputs ? "disable" : ""
 
@@ -216,10 +235,8 @@ export default class Game extends React.Component{
             
             <section id="game">
 
-                <div className="sprite-window">
-                    {this.state.currentSprite}
-                    {gameState === 'interRound' && <InterRound rank={rank} nextRound={this.nextRound}/>}
-                    {gameState === "start" && <button onClick={this.playSequence}>play</button>}
+                <div className="main-window">
+                    {mainWindow}
                 </div>
 
                 <div className={`game-buttons ${disableButtons}`}>

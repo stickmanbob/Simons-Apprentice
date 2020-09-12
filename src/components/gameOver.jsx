@@ -10,7 +10,6 @@
 //Imports
 
 import React from 'react';
-import { render } from '@testing-library/react';
 import { Link } from 'react-router-dom';
 
 // Main
@@ -105,7 +104,7 @@ export default class GameOver extends React.Component{
 
     render(){
 
-        const { rank, reset } = this.props;
+        const { rank } = this.props;
         let { showHSInput, highScore, name } = this.state;
         
         let message;
