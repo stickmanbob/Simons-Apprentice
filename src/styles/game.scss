@@ -5,5 +5,7 @@
     flex-direction: column;
     align-items: center;
 
-    
+    .game-buttons.disable button:hover{
+        // background-color: inherit;
+    }
 }

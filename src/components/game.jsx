@@ -7,10 +7,13 @@
 
 // Imports
 
-import React from 'react';
-import GameOver from './gameOver';
-import InterRound from './interRound';
+  //Utils
+  import React from 'react';
+  import { SIMON_GIF_LENGTH, PLAYER_GIF_LENGTH } from '../constants';
 
+  //Components
+  import GameOver from './gameOver';
+  import InterRound from './interRound';
 
 //Main
 
@@ -28,13 +31,14 @@ export default class Game extends React.Component{
             sequence: ["red"],
             currentGuess: 0,
             gameState: "start",
-            score: 0
+            score: 0,
+            disableInputs: true 
         }
 
         
 
         // Function Bindings
-        this.handleClick = this.handleClick.bind(this); 
+        this.handleInput = this.handleInput.bind(this); 
         this.fetchSprites = this.fetchSprites.bind(this); 
         this.playSequence = this.playSequence.bind(this); 
         this.resetGame = this.resetGame.bind(this);
@@ -79,10 +83,26 @@ export default class Game extends React.Component{
         //Play the current sequence
         for(let i = 0; i < this.state.sequence.length ; i++){
 
+            // Display an elemental
             this.setState({ currentSprite: this.sprites[this.state.sequence[i]], gameState: "input" } );
-            await this.sleep(1300);
-            this.setState({ currentSprite: null,})
-            await this.sleep(400); 
+            
+            //Wait for the gif to end
+            await this.sleep(SIMON_GIF_LENGTH);
+            
+            //Remove the Elemental, and enable buttons if its the last one
+
+            if(i === this.state.sequence.length-1){
+                this.setState({
+                    currentSprite: null,
+                    disableInputs: false
+                }) 
+            } else{
+                this.setState({ currentSprite: null, })
+
+            }
+            
+            //Give a gap between Elementals
+            await this.sleep(400);     
             
         }
         
@@ -96,6 +116,7 @@ export default class Game extends React.Component{
         this.setState({
             currentSprite: null,
             currentGuess: this.state.currentGuess + 1,
+            disableInputs: false,
         })
     }
 
@@ -106,7 +127,8 @@ export default class Game extends React.Component{
         this.setState({
             currentSprite: null,
             gameState: "",
-            currentGuess: 0
+            currentGuess: 0,
+            disableInputs: true
         })
 
         this.playSequence(); 
@@ -125,11 +147,15 @@ export default class Game extends React.Component{
     gameOver(){
         this.setState({
             gameState: "gameOver",
+            disableInputs: true 
         })
     }
 
-    handleClick(buttonColor){
+    handleInput(buttonColor){
         
+        // If buttons are disabled, return a handler that does nothing
+        if(this.state.disableInputs) return (e) => e.preventDefault(); 
+
         // Return an event handler that has access to the buttonColor parameter
         return async (e) =>{
             
@@ -143,12 +169,14 @@ export default class Game extends React.Component{
                 // Decide which sprite to render next based on buttonColor parameter
                 let newSprite = this.sprites[buttonColor] || null;
 
-                // Update the current sprite in state
+                // Update the current sprite in state and prevent further inputs
                 this.setState({
                     currentSprite: newSprite,
+                    disableInputs: true, 
                 })
 
-                await this.sleep(1300);
+                // Wait for the gif to play
+                await this.sleep(PLAYER_GIF_LENGTH);
 
                 // If that was the last item, go to the inter round screen
                 if(currentGuess === sequence.length -1){
@@ -156,7 +184,8 @@ export default class Game extends React.Component{
                     this.setState({
                         gameState: "interRound",
                         currentSprite: null,
-                        score: this.state.score + 1
+                        score: this.state.score + 1,
+                        disableInputs: true,
                     });
                 
                 // Otherwise, let the user keep summoning elementals
@@ -181,6 +210,8 @@ export default class Game extends React.Component{
         let gameState = this.state.gameState;
         let rank = this.state.score; 
 
+        let disableButtons = this.state.disableInputs ? "disable" : ""
+
         return(
             
             <section id="game">
@@ -191,20 +222,21 @@ export default class Game extends React.Component{
                     {gameState === "start" && <button onClick={this.playSequence}>play</button>}
                 </div>
 
-                <div className="game-buttons">
-                    <button onClick={this.handleClick("red")}>
+                <div className={`game-buttons ${disableButtons}`}>
+                    
+                    <button onClick={this.handleInput("red")}>
                         Red
                     </button>
 
-                    <button value="green" onClick={this.handleClick("green")}>
+                    <button  onClick={this.handleInput("green")}>
                         Green
                     </button>
                         
-                    <button value="yellow" onClick={this.handleClick("yellow")}>
+                    <button onClick={this.handleInput("yellow")}>
                         Yellow
                     </button>
 
-                    <button value="blue" onClick={this.handleClick("blue")}>
+                    <button onClick={this.handleInput("blue")}>
                         Blue
                     </button>
 
