@@ -41,7 +41,8 @@ export default class GameOver extends React.Component{
 
         // If the player's rank is higher than the lowest high score, 
         // render a modified different screen
-        if (rank > this.highScoreList[this.highScoreList.length - 1].rank || this.highScoreList.length < 15) {
+        if (rank > this.highScoreList[this.highScoreList.length - 1].rank 
+            || (this.highScoreList.length < 15 && rank > 0)) {
 
             this.setState({
                 showHSInput: true,

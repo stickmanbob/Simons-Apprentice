@@ -21,8 +21,8 @@ export default function HighScores(){
             <h1>Honored Apprentices</h1>
 
             {
-                highScoreList.map((player) => {
-                    return <div>
+                highScoreList.map((player, idx) => {
+                    return <div key={idx}>
                         <h3>{player.name}</h3>
                         <h3>{player.rank}</h3>
                     </div>
