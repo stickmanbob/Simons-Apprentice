@@ -80,22 +80,23 @@ export default class Game extends React.Component{
     }
 
     async playSequence(){
-        if(this.state.gameState !== 'play') this.setState({gameState: 'play'}); 
+        if(this.state.gameState !== 'simon-turn') await this.setState({gameState: 'simon-turn'}); 
         //Play the current sequence
         for(let i = 0; i < this.state.sequence.length ; i++){
 
             // Display an elemental
-            this.setState({ currentSprite: this.sprites[this.state.sequence[i]], gameState: "input" } );
+            this.setState({ currentSprite: this.sprites[this.state.sequence[i]] } );
             
             //Wait for the gif to end
             await this.sleep(SIMON_GIF_LENGTH);
             
-            //Remove the Elemental, and enable buttons if its the last one
+            //Remove the Elemental, and control to the player if its the last one
 
             if(i === this.state.sequence.length-1){
                 this.setState({
                     currentSprite: null,
-                    disableInputs: false
+                    disableInputs: false,
+                    gameState: "player-turn"
                 }) 
             } else{
                 this.setState({ currentSprite: null, })
@@ -203,6 +204,23 @@ export default class Game extends React.Component{
         
     }
 
+    selectMessage(){
+        let gameState = this.state.gameState;
+
+        switch (gameState){
+            case "simon-turn":
+                return (
+                    <h1>Watch closely...</h1>
+                );
+            case "player-turn":
+                return(
+                    <h1>Summon the Elementals in the Correct Order</h1>
+                );
+            default:
+                return null;
+        }
+    }
+
     render(){
 
         let gameState = this.state.gameState;
@@ -215,25 +233,29 @@ export default class Game extends React.Component{
         switch(gameState){
             case 'gameOver':
                 return <GameOver rank={this.state.score} reset={this.resetGame} />;
+
             case 'start':
                 mainWindow = <button onClick={this.playSequence}>Begin Spell!</button>;
                 break;
+
             case 'interRound':
                 return <InterRound rank={rank} nextRound={this.nextRound} />
             
-                default:
+            default:
                 mainWindow =  <SummoningCircle sprite={this.state.currentSprite}/>
             
         }
-
-        console.log(this.state.gameState)
         
 
         let disableButtons = this.state.disableInputs ? "disable" : ""
 
+        let message = this.selectMessage();
+
         return(
             
             <section id="game">
+
+                {message}
 
                 <div className="main-window">
                     {mainWindow}
