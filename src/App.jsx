@@ -9,31 +9,43 @@
     import './styles/index.scss';
     import preloadImages from './utils/imageLoader';
     import { HashRouter, Switch, Route, Link } from 'react-router-dom';
+    import { GAME_IMAGE_URLS, MENU_IMG_URLS } from './utils/constants';
 
   //Components
     import Game from "./components/game";
 
     import HighScores from './components/highScores';
-    import { GAME_IMAGE_URLS, MENU_IMG_URLS } from './utils/constants';
+
+    import MainMenu from './components/menu';
+
+    import Header from "./components/header";
 
 
 
 //Main
 function App() {
 
+  // Keep track of what assets have been loaded
   var [menuLoaded, setMenuLoaded] = useState(false);
   var [gameLoaded, setGameLoaded] = useState(false);
 
+  // On start, preload all images for the menu and game
   useEffect(()=>{
+
+    // We can render the menu first as soon as its assets are loaded
     if(!menuLoaded){
       preloadImages(MENU_IMG_URLS, ()=>setMenuLoaded(true));
     }
 
+    // gameLoaded will be passed as a prop to the Game component,
+    // so if the user tries to play before the assets load they will
+    // get a loading screen
     if(!gameLoaded){
       preloadImages(GAME_IMAGE_URLS, ()=>setGameLoaded(true));
     }
   })
 
+  //If menu assets are not loaded, show a loading screen
   if(!menuLoaded){
     return (
       <div>Loading...</div>
@@ -41,9 +53,11 @@ function App() {
   }
 
   return (
-    
-    <HashRouter>
-      <div className="App">
+
+    <div className="App">
+      <Header/>
+      
+      <HashRouter>
         <Switch>
 
           <Route path="/game">
@@ -55,13 +69,13 @@ function App() {
           </Route>
 
           <Route path="/">
-            <Link to="/game">Play!</Link>
+            <MainMenu/>
           </Route>
           
         </Switch>
           
-      </div>
-    </HashRouter>
+      </HashRouter>
+    </div>
   );
 }
 

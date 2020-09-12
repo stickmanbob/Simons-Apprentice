@@ -1,0 +1,28 @@
+#header{
+    width: 100%;
+
+    background-color: black;
+
+    display: flex;
+
+    justify-content: center;
+
+    padding: 10px 0px;
+    
+    h1{
+        color: #ab0e00;
+        font-size: 40px;
+        font-weight: 900;
+
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: gold;
+    }
+
+    @media (max-width:600px) {
+        padding: 5px 0px;
+
+        h1{
+            font-size: 36px; 
+        }
+    }
+}

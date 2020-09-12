@@ -3,6 +3,7 @@
 // Renders the game itself and handles game logic
 // 
 // Props:
+// - loaded(boolean) : lets us know if the App component has loaded all our images yet
 
 
 // Imports
@@ -10,11 +11,9 @@
   //Utils
   import React from 'react';
   import { SIMON_GIF_LENGTH, PLAYER_GIF_LENGTH, FIZZLE_LENGTH, COLORS, IMAGE_URLS } from '../utils/constants';
-  import preloadImages from "../utils/imageLoader";
 
   //Components
   import GameOver from './gameOver';
-  
   import SummoningCircle from './summoningCircle';
 
     

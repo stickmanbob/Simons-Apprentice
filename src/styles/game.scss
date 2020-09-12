@@ -52,12 +52,12 @@
 
     .fizzle{
         border-radius: 50%;
-        width: 250px;
+        width: 400px;
     }
 
     .summoning-circle{
-        min-height: 400px;
-        min-width: 400px;
+        height: 400px;
+        width: 400px;
         
         background-image: url("../../src/assets/circle.jpg");
         background-size: contain;
@@ -74,5 +74,55 @@
     .rank-counter{
         font-size: 36px;
         font-weight: 700;
+    }
+
+    //Mobile values
+    @media (max-width: 600px) {
+        .summoning-circle, .start-button, .fizzle{
+            height: 250px;
+            width: 250px;
+        }
+
+        .summoning-circle{
+            margin-top: 0px;
+        }
+
+        h1{
+            font-size: 20px; 
+        }
+
+        h2{
+            font-size: 18px;
+        }
+
+        h3{
+            font-size: 16px;
+        }
+
+        .game-buttons{
+
+            display: block;
+
+            columns: 2;
+
+            max-width: 90%;
+        }
+
+        .orb{
+            width: 90px;
+            height: 90px; 
+        }
+
+        @media (min-height: 700px) {
+            .orb{
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+        .rank-counter{
+            font-size: 18px; 
+        }
+
     }
 }
