@@ -36,10 +36,10 @@ export default class Game extends React.Component{
 
         // Create references to sprites we will use here
         this.sprites = {
-            red: <img src={require("../assets/redSprite.gif")} alt="red" />,
-            yellow: <img src={require("../assets/yellowSprite.gif")} alt="yellow" />,
-            green: <img src={require("../assets/greenSprite.gif")} alt="green" />,
-            blue: <img src={require("../assets/blueSprite.gif")} alt="blue" />,
+            red: <img className="elemental" src={require("../assets/redSprite.gif")} alt="red" />,
+            yellow: <img className="elemental" src={require("../assets/yellowSprite.gif")} alt="yellow" />,
+            green: <img className="elemental" src={require("../assets/greenSprite.gif")} alt="green" />,
+            blue: <img className="elemental" src={require("../assets/blueSprite.gif")} alt="blue" />,
             fizzle: <img className="fizzle" src={require("../assets/fizzle.gif")} alt="fizzle!" />,
         }
         

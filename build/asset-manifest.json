@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Simons-Apprentice/static/css/main.8c0e41dd.chunk.css",
-    "main.js": "/Simons-Apprentice/static/js/main.31db0fbb.chunk.js",
-    "main.js.map": "/Simons-Apprentice/static/js/main.31db0fbb.chunk.js.map",
+    "main.js": "/Simons-Apprentice/static/js/main.68fd05d7.chunk.js",
+    "main.js.map": "/Simons-Apprentice/static/js/main.68fd05d7.chunk.js.map",
     "runtime-main.js": "/Simons-Apprentice/static/js/runtime-main.d7c8acf7.js",
     "runtime-main.js.map": "/Simons-Apprentice/static/js/runtime-main.d7c8acf7.js.map",
     "static/js/2.ac5324b0.chunk.js": "/Simons-Apprentice/static/js/2.ac5324b0.chunk.js",
     "static/js/2.ac5324b0.chunk.js.map": "/Simons-Apprentice/static/js/2.ac5324b0.chunk.js.map",
     "index.html": "/Simons-Apprentice/index.html",
-    "precache-manifest.bb265053113431f6fa198fc850167058.js": "/Simons-Apprentice/precache-manifest.bb265053113431f6fa198fc850167058.js",
+    "precache-manifest.ed2cd51b183b4b1ffa937b2e1d6d366f.js": "/Simons-Apprentice/precache-manifest.ed2cd51b183b4b1ffa937b2e1d6d366f.js",
     "service-worker.js": "/Simons-Apprentice/service-worker.js",
     "static/css/main.8c0e41dd.chunk.css.map": "/Simons-Apprentice/static/css/main.8c0e41dd.chunk.css.map",
     "static/js/2.ac5324b0.chunk.js.LICENSE.txt": "/Simons-Apprentice/static/js/2.ac5324b0.chunk.js.LICENSE.txt",
@@ -31,6 +31,6 @@
     "static/js/runtime-main.d7c8acf7.js",
     "static/js/2.ac5324b0.chunk.js",
     "static/css/main.8c0e41dd.chunk.css",
-    "static/js/main.31db0fbb.chunk.js"
+    "static/js/main.68fd05d7.chunk.js"
   ]
 }
