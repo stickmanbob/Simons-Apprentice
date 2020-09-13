@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c271cc59cb11fbc180863e2a18e6a85f",
+    "revision": "4af6a03279d817c3669b95e85d13260a",
     "url": "/Simons-Apprentice/index.html"
   },
   {
-    "revision": "a17eb3f1f225ce2e14d0",
-    "url": "/Simons-Apprentice/static/css/main.a6feb325.chunk.css"
+    "revision": "b909e92faf4ce49db71e",
+    "url": "/Simons-Apprentice/static/css/main.95ad98d2.chunk.css"
   },
   {
     "revision": "033764d93ad514d9474a",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Simons-Apprentice/static/js/2.ac5324b0.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a17eb3f1f225ce2e14d0",
-    "url": "/Simons-Apprentice/static/js/main.397f0e02.chunk.js"
+    "revision": "b909e92faf4ce49db71e",
+    "url": "/Simons-Apprentice/static/js/main.d4b2eb7c.chunk.js"
   },
   {
     "revision": "922ceb6c21db0893e10e",
@@ -52,8 +52,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Simons-Apprentice/static/media/greenSprite.99effb91.gif"
   },
   {
-    "revision": "12d9fc5d925497902a06a5937fdd713a",
-    "url": "/Simons-Apprentice/static/media/lab.12d9fc5d.jpg"
+    "revision": "632b6fa7e489418c058e8d7ea647e509",
+    "url": "/Simons-Apprentice/static/media/lab4.632b6fa7.jpg"
   },
   {
     "revision": "b190cd11f71b412e0403aaf1ad5b0ad8",

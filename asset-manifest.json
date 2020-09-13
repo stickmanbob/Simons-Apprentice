@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Simons-Apprentice/static/css/main.a6feb325.chunk.css",
-    "main.js": "/Simons-Apprentice/static/js/main.397f0e02.chunk.js",
-    "main.js.map": "/Simons-Apprentice/static/js/main.397f0e02.chunk.js.map",
+    "main.css": "/Simons-Apprentice/static/css/main.95ad98d2.chunk.css",
+    "main.js": "/Simons-Apprentice/static/js/main.d4b2eb7c.chunk.js",
+    "main.js.map": "/Simons-Apprentice/static/js/main.d4b2eb7c.chunk.js.map",
     "runtime-main.js": "/Simons-Apprentice/static/js/runtime-main.d7c8acf7.js",
     "runtime-main.js.map": "/Simons-Apprentice/static/js/runtime-main.d7c8acf7.js.map",
     "static/js/2.ac5324b0.chunk.js": "/Simons-Apprentice/static/js/2.ac5324b0.chunk.js",
     "static/js/2.ac5324b0.chunk.js.map": "/Simons-Apprentice/static/js/2.ac5324b0.chunk.js.map",
     "index.html": "/Simons-Apprentice/index.html",
-    "precache-manifest.66e3e9d4e61ab347a923bb2326cf8964.js": "/Simons-Apprentice/precache-manifest.66e3e9d4e61ab347a923bb2326cf8964.js",
+    "precache-manifest.26a17cf06ea9c74f14b54940b612f9bc.js": "/Simons-Apprentice/precache-manifest.26a17cf06ea9c74f14b54940b612f9bc.js",
     "service-worker.js": "/Simons-Apprentice/service-worker.js",
-    "static/css/main.a6feb325.chunk.css.map": "/Simons-Apprentice/static/css/main.a6feb325.chunk.css.map",
+    "static/css/main.95ad98d2.chunk.css.map": "/Simons-Apprentice/static/css/main.95ad98d2.chunk.css.map",
     "static/js/2.ac5324b0.chunk.js.LICENSE.txt": "/Simons-Apprentice/static/js/2.ac5324b0.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/Simons-Apprentice/static/media/IMMORTAL.5b003b64.ttf",
     "static/media/blueOrb.png": "/Simons-Apprentice/static/media/blueOrb.fd1f041c.png",
@@ -19,7 +19,7 @@
     "static/media/fizzle.gif": "/Simons-Apprentice/static/media/fizzle.8c4e8a93.gif",
     "static/media/greenOrb.png": "/Simons-Apprentice/static/media/greenOrb.0ecc18da.png",
     "static/media/greenSprite.gif": "/Simons-Apprentice/static/media/greenSprite.99effb91.gif",
-    "static/media/lab.jpg": "/Simons-Apprentice/static/media/lab.12d9fc5d.jpg",
+    "static/media/lab4.jpg": "/Simons-Apprentice/static/media/lab4.632b6fa7.jpg",
     "static/media/parchment.jpeg": "/Simons-Apprentice/static/media/parchment.b190cd11.jpeg",
     "static/media/pentagram.png": "/Simons-Apprentice/static/media/pentagram.ae5d5114.png",
     "static/media/redOrb.png": "/Simons-Apprentice/static/media/redOrb.50e75402.png",
@@ -30,7 +30,7 @@
   "entrypoints": [
     "static/js/runtime-main.d7c8acf7.js",
     "static/js/2.ac5324b0.chunk.js",
-    "static/css/main.a6feb325.chunk.css",
-    "static/js/main.397f0e02.chunk.js"
+    "static/css/main.95ad98d2.chunk.css",
+    "static/js/main.d4b2eb7c.chunk.js"
   ]
 }
