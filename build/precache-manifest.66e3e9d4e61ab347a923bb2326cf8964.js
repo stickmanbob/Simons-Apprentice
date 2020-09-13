@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1460b6e6fc4978a6d3d2c2fa7f05c817",
+    "revision": "c271cc59cb11fbc180863e2a18e6a85f",
     "url": "/Simons-Apprentice/index.html"
   },
   {
-    "revision": "742a0bb15ac4ed45adc9",
-    "url": "/Simons-Apprentice/static/css/main.a8118338.chunk.css"
+    "revision": "a17eb3f1f225ce2e14d0",
+    "url": "/Simons-Apprentice/static/css/main.a6feb325.chunk.css"
   },
   {
-    "revision": "c8ff4026c18afd8fd168",
-    "url": "/Simons-Apprentice/static/js/2.f69f56a7.chunk.js"
+    "revision": "033764d93ad514d9474a",
+    "url": "/Simons-Apprentice/static/js/2.ac5324b0.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/Simons-Apprentice/static/js/2.f69f56a7.chunk.js.LICENSE.txt"
+    "url": "/Simons-Apprentice/static/js/2.ac5324b0.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "742a0bb15ac4ed45adc9",
-    "url": "/Simons-Apprentice/static/js/main.f46ef33e.chunk.js"
+    "revision": "a17eb3f1f225ce2e14d0",
+    "url": "/Simons-Apprentice/static/js/main.397f0e02.chunk.js"
   },
   {
     "revision": "922ceb6c21db0893e10e",
@@ -32,8 +32,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Simons-Apprentice/static/media/blueOrb.fd1f041c.png"
   },
   {
-    "revision": "b6c13a1502b44afc859decbc134128da",
-    "url": "/Simons-Apprentice/static/media/blueSprite.b6c13a15.gif"
+    "revision": "6618db314adac9be03b7aec5e436e5c4",
+    "url": "/Simons-Apprentice/static/media/blueSprite.6618db31.gif"
   },
   {
     "revision": "b9ff05f9555538a1d6943fb897abe50c",
@@ -48,12 +48,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Simons-Apprentice/static/media/greenOrb.0ecc18da.png"
   },
   {
-    "revision": "ea067f665b448350b8c5f25b56edaf1e",
-    "url": "/Simons-Apprentice/static/media/greenSprite.ea067f66.gif"
+    "revision": "99effb915d5d315e126c3428fb4d9c6a",
+    "url": "/Simons-Apprentice/static/media/greenSprite.99effb91.gif"
   },
   {
     "revision": "12d9fc5d925497902a06a5937fdd713a",
     "url": "/Simons-Apprentice/static/media/lab.12d9fc5d.jpg"
+  },
+  {
+    "revision": "b190cd11f71b412e0403aaf1ad5b0ad8",
+    "url": "/Simons-Apprentice/static/media/parchment.b190cd11.jpeg"
   },
   {
     "revision": "ae5d51146aac9cc91ea09554dbac5c27",
@@ -64,15 +68,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Simons-Apprentice/static/media/redOrb.50e75402.png"
   },
   {
-    "revision": "829b5c15f96f417248aefe54fe5c5a62",
-    "url": "/Simons-Apprentice/static/media/redSprite.829b5c15.gif"
+    "revision": "13af2104a49ac3e3c7dd5c1d32e39e0a",
+    "url": "/Simons-Apprentice/static/media/redSprite.13af2104.gif"
   },
   {
     "revision": "ea689330e268dd5542775c085a72d879",
     "url": "/Simons-Apprentice/static/media/yellowOrb.ea689330.png"
   },
   {
-    "revision": "49a3dbf3727fb262138af6cd6ade1173",
-    "url": "/Simons-Apprentice/static/media/yellowSprite.49a3dbf3.gif"
+    "revision": "947f11204871afb9151bbcb64bfe5078",
+    "url": "/Simons-Apprentice/static/media/yellowSprite.947f1120.gif"
   }
 ]);

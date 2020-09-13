@@ -18,7 +18,7 @@ export const COLORS = ["red", "blue", "yellow", "green"];
 
 //Main Menu asset paths
 export const MENU_IMG_URLS = [
-    require("../assets/lab.jpg")
+    require("../assets/lab4.jpg")
 ]
 
 // All game image asset paths
