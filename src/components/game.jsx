@@ -18,9 +18,6 @@
 
     
 //Main
-
-
-
 export default class Game extends React.Component{
 
     constructor(props){
@@ -30,7 +27,7 @@ export default class Game extends React.Component{
         this.state = {
             currentSprite: null,
             loaded:true,
-            sequence: ["red"],
+            sequence: [this.randomColor()],
             currentGuess: 0,
             gameState: "start",
             score: 0,
@@ -54,6 +51,10 @@ export default class Game extends React.Component{
         this.nextRound = this.nextRound.bind(this); 
     }
 
+    randomColor(){
+        return COLORS[Math.floor(Math.random() * 4)];
+    }
+
 
     updateSequence(){
         
@@ -61,7 +62,7 @@ export default class Game extends React.Component{
         let newSequence = Array.from(this.state.sequence);
 
         //Generate a random new color
-        let newColor = COLORS[Math.floor(Math.random()*4)];
+        let newColor = this.randomColor();
 
         //Add to sequence and update state
         newSequence.push(newColor);
