@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Simons-Apprentice/static/css/main.68737ea2.chunk.css",
-    "main.js": "/Simons-Apprentice/static/js/main.c68a9980.chunk.js",
-    "main.js.map": "/Simons-Apprentice/static/js/main.c68a9980.chunk.js.map",
+    "main.css": "/Simons-Apprentice/static/css/main.a5d34b32.chunk.css",
+    "main.js": "/Simons-Apprentice/static/js/main.c9d94fcd.chunk.js",
+    "main.js.map": "/Simons-Apprentice/static/js/main.c9d94fcd.chunk.js.map",
     "runtime-main.js": "/Simons-Apprentice/static/js/runtime-main.d7c8acf7.js",
     "runtime-main.js.map": "/Simons-Apprentice/static/js/runtime-main.d7c8acf7.js.map",
     "static/js/2.ac5324b0.chunk.js": "/Simons-Apprentice/static/js/2.ac5324b0.chunk.js",
     "static/js/2.ac5324b0.chunk.js.map": "/Simons-Apprentice/static/js/2.ac5324b0.chunk.js.map",
     "index.html": "/Simons-Apprentice/index.html",
-    "precache-manifest.0c8327111a3689aa35ba682889afbac2.js": "/Simons-Apprentice/precache-manifest.0c8327111a3689aa35ba682889afbac2.js",
+    "precache-manifest.5696199cf26624de455e357aaf184418.js": "/Simons-Apprentice/precache-manifest.5696199cf26624de455e357aaf184418.js",
     "service-worker.js": "/Simons-Apprentice/service-worker.js",
-    "static/css/main.68737ea2.chunk.css.map": "/Simons-Apprentice/static/css/main.68737ea2.chunk.css.map",
+    "static/css/main.a5d34b32.chunk.css.map": "/Simons-Apprentice/static/css/main.a5d34b32.chunk.css.map",
     "static/js/2.ac5324b0.chunk.js.LICENSE.txt": "/Simons-Apprentice/static/js/2.ac5324b0.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/Simons-Apprentice/static/media/IMMORTAL.5b003b64.ttf",
     "static/media/blueOrb.png": "/Simons-Apprentice/static/media/blueOrb.fd1f041c.png",
@@ -30,7 +30,7 @@
   "entrypoints": [
     "static/js/runtime-main.d7c8acf7.js",
     "static/js/2.ac5324b0.chunk.js",
-    "static/css/main.68737ea2.chunk.css",
-    "static/js/main.c68a9980.chunk.js"
+    "static/css/main.a5d34b32.chunk.css",
+    "static/js/main.c9d94fcd.chunk.js"
   ]
 }
