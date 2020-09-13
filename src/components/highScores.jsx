@@ -38,9 +38,8 @@ export default function HighScores(){
 
             </div>
             
-
-            <Link to="/game" className="no-text-outline">Play Again!</Link>
-            <Link to="/" className="no-text-outline">Main Menu</Link>
+            <Link to="/game" >Play Again!</Link>
+            <Link to="/" >Main Menu</Link>
         </section>
 
     )
