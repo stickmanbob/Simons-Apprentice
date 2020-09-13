@@ -235,7 +235,7 @@ export default class Game extends React.Component{
                 );
             case "player-turn":
                 return(
-                    <h1>Use the Orbs to Summon the Elementals in the Correct Order</h1>
+                    <h1>Use the Orbs to Summon Elementals in the Correct Order</h1>
                 );
             case "start":
                 return (
