@@ -71,7 +71,11 @@ export default class Game extends React.Component{
     }
 
     async playSequence(){
-        if(this.state.gameState !== 'simon-turn') await this.setState({gameState: 'simon-turn'}); 
+        if(this.state.gameState !== 'simon-turn') this.setState({gameState: 'simon-turn'}); 
+
+        //Pause before the sequence
+        this.sleep(500);
+
         //Play the current sequence
         for(let i = 0; i < this.state.sequence.length ; i++){
 
@@ -84,12 +88,15 @@ export default class Game extends React.Component{
             //Remove the Elemental, and control to the player if its the last one
 
             if(i === this.state.sequence.length-1){
+
                 this.setState({
                     currentSprite: null,
                     disableInputs: false,
                     gameState: "player-turn"
                 }) 
+                
             } else{
+
                 this.setState({ currentSprite: null, })
 
             }
