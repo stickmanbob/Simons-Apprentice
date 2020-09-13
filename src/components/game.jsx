@@ -265,11 +265,11 @@ export default class Game extends React.Component{
         switch (gameState) {
 
             case 'start':
-                let startButton = <img className="start-button" src={require("../assets/pentagram.png")} onClick={this.playSequence} alt="start"/>;
+                let startButton = <img className="start-button" src={require("../assets/pentagram.png")} draggable="false" onClick={this.playSequence} alt="start"/>;
                 return <SummoningCircle contents={startButton} />
 
             case 'interRound':
-                let nextButton = <img className="start-button" src={require("../assets/pentagram.png")} onClick={this.nextRound} alt="next round"/>;
+                let nextButton = <img className="start-button" src={require("../assets/pentagram.png")} draggable="false" onClick={this.nextRound} alt="next round"/>;
                 return <SummoningCircle contents={nextButton} />;
 
             default:
