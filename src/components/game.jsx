@@ -10,7 +10,7 @@
 
   //Utils
   import React from 'react';
-  import { SIMON_GIF_LENGTH, PLAYER_GIF_LENGTH, FIZZLE_LENGTH, COLORS, } from '../utils/constants';
+  import { ELEMENTAL_ANIM_LENGTH, FIZZLE_LENGTH, COLORS, } from '../utils/constants';
 
   //Components
   import GameOver from './gameOver';
@@ -86,7 +86,7 @@ export default class Game extends React.Component{
             this.setState({ currentSprite: this.sprites[this.state.sequence[i]] } );
             
             //Wait for the gif to end
-            await this.sleep(SIMON_GIF_LENGTH);
+            await this.sleep(ELEMENTAL_ANIM_LENGTH);
             
             //Remove the Elemental, and control to the player if its the last one
 
@@ -197,7 +197,7 @@ export default class Game extends React.Component{
                 })
 
                 // Wait for the gif to play
-                await this.sleep(PLAYER_GIF_LENGTH);
+                await this.sleep(ELEMENTAL_ANIM_LENGTH);
 
                 // If that was the last item, go to the inter round screen
                 if(currentGuess === sequence.length -1){ 
