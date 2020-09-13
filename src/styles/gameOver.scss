@@ -1,6 +1,10 @@
 #game-over{
     max-width: 500px;
 
+    min-height: 500px; 
+
+    justify-content: space-around;
+
     nav{
         display: flex;
         flex-direction: column;

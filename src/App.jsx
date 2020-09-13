@@ -19,6 +19,8 @@
     import MainMenu from './components/menu';
 
     import Header from "./components/header";
+    
+    import Instructions from './components/instructions';
 
 
 
@@ -63,6 +65,7 @@ function App() {
 
     <div className="App">
       <HashRouter>
+
         <Switch>
 
           <Route path="/game">
@@ -77,6 +80,10 @@ function App() {
       
       
         <Switch>
+
+          <Route path="/instructions">
+            <Instructions />
+          </Route>
 
           <Route path="/game">
             <Game loaded={gameLoaded}/>

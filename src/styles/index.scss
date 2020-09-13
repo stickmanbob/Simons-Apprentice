@@ -12,6 +12,7 @@
 @import "./highScores.scss";
 @import "./header.scss";
 @import "./mainMenu.scss";
+@import "./instructions.scss"; 
 
 @font-face {
   font-family: Immortal;
@@ -37,7 +38,7 @@
     background-image: none;
   }
 
-  height: 100vh;
+  min-height: 100vh;
 
 
 }
@@ -45,7 +46,6 @@
 .App > section{
 
     width: 650px;
-    min-height: 600px;
 
     margin: 0px auto;
 
@@ -56,38 +56,25 @@
     align-items: center;
 
     color: white; 
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
 
-    .no-text-outline{
-      -webkit-text-stroke-width: 0px;
-      -webkit-text-stroke-color: none;
-    }
-
-    // background-color: rgba(125,125,125,0.8);
     background-color: black;
-    // background-image: url("../assets/parchment.jpeg");
+    
     padding: 20px;
     border-radius: 10px;
     height: fit-content;
 
     h1{
-        
         font-size: 36px;
-        font-weight: 600; 
-
         margin: 5px 0px;
     }
 
     h2{
-        font-size: 30px;
-        font-weight: 600;
+        font-size: 30px;     
         margin: 5px 0px;
     }
 
     h3{
         font-size: 26px;
-        font-weight: 600;
         margin: 5px 0px;
     }
 
@@ -113,6 +100,20 @@
       box-sizing: border-box;
       background-color: #ab0e00;
 
+    }
+
+    p, ul, li{
+      -webkit-text-stroke-width: 0px;
+      -webkit-text-stroke-color: none;
+    }
+
+    ul{
+      display: flex;
+      flex-direction: column;
+    }
+
+    li{
+      list-style-type: disc;
     }
 
     a:hover, .button:hover{

@@ -1,23 +1,30 @@
 #high-scores{
 
     h1{
-        margin-bottom: 30px;
-    }
-    .table-heading{
-        columns: 3;
-        column-gap: 50px;
-        max-width: 100%;
+        color: gold; 
     }
 
-    .score{
-        columns: 3;
-        column-gap: 50px;
-        // text-align: center;
-        // vertical-align: baseline;
-
-        h3{
-            margin: 0px;
-        }
-
+    h2{
+        color:#ab0e00;
     }
+
+   .score-table{
+       display: flex;
+       justify-content: space-around;
+       width: 100%;
+
+       margin-top: 20px;
+       margin-bottom: 30px;
+   }
+
+   .column{
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       width: 50%;
+   }
+    
+   @media (max-width: 600px) {
+        margin-top: 30px;
+   }
 }

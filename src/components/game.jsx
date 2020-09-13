@@ -230,7 +230,7 @@ export default class Game extends React.Component{
             case "interRound":
                 return(
                     <div>
-                        <h1>Good Job, Apprentice!</h1>
+                        <h1 className="victory">Good Job, Apprentice!</h1>
                         <h2>You have reached Rank {this.state.score}</h2>
                         <h3>Touch the red pentagram to continue</h3>
                     </div>
