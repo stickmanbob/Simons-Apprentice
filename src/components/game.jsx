@@ -226,6 +226,7 @@ export default class Game extends React.Component{
         
     }
 
+    // Render a different message on top of the screen depending on the game state 
     selectMessage(){
         let gameState = this.state.gameState;
 
@@ -259,6 +260,7 @@ export default class Game extends React.Component{
         }
     }
 
+    // Render the summoning circle, with different things displayed depending on game state
     selectMainWindow() {
         let gameState = this.state.gameState;
 
@@ -282,15 +284,18 @@ export default class Game extends React.Component{
 
         let rank = this.state.score;
 
+        // Show a loading screen if the assets have not loaded
         if(!this.props.loaded) return (
             <section>
                 <h1>Loading...</h1>
                 <div className="lds-circle"><div></div></div>
             </section>
         );
-
+        
+        // Show the game over screen if the player has lost
         if (this.state.gameState === "gameOver") return <GameOver rank={this.state.score} reset={this.resetGame} />;
-
+        
+        // Set up our game screen sub components
         let mainWindow = this.selectMainWindow();
 
         let enableButtons = this.state.disableInputs ? "" : "enable"

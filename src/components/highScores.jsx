@@ -13,6 +13,7 @@ import { Link } from "react-router-dom";
 
 export default function HighScores(){
 
+    // Get the high scores
     let highScoreList = JSON.parse(localStorage.data).scores; 
  
     return(
@@ -22,17 +23,27 @@ export default function HighScores(){
             <div className="score-table">
 
                 <div className="column">
+
                     <h2>Name</h2>
+
                     {highScoreList.map((player,idx)=>{
+
                         return <h3 key={idx}>{player.name}</h3>
+
                     })}
+
                 </div>
 
                 <div className="column">
+
                     <h2>Rank</h2>
+
                     {highScoreList.map((player,idx) => {
+
                         return <h3 key={idx}>{player.rank}</h3>
+                        
                     })}
+
                 </div>
 
             </div>

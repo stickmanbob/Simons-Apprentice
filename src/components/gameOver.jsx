@@ -38,12 +38,12 @@ export default class GameOver extends React.Component{
         //Fetch the current high scores
         this.highScoreList = JSON.parse(localStorage.data).scores;
 
-        // If the player's rank is higher than the lowest high score, or
-        // there are fewer than 15 high scores, render the name input 
-
         //Avoid bugs due to empty score lists
         let lastPlayer = this.highScoreList[this.highScoreList.length - 1] || {rank:0};
 
+
+        // If the player's rank is higher than the lowest high score, or
+        // there are fewer than 15 high scores, render the name input 
         if ((this.highScoreList.length < 15 && rank > 0) || rank > lastPlayer.rank) {
 
             this.setState({
@@ -54,6 +54,7 @@ export default class GameOver extends React.Component{
         }
     }
 
+    //Bind name input to state
     handleNameChange(e){
         e.preventDefault();
 
@@ -62,6 +63,7 @@ export default class GameOver extends React.Component{
         })
     }
 
+    // Either render the nav buttons or name input if the player made a high score
     navButtons(){
 
         if (!this.state.showHSInput){
@@ -88,20 +90,25 @@ export default class GameOver extends React.Component{
     updateHighScores(e){
         e.preventDefault();
 
+        //Don't allow empty name submissions
         if(this.state.name.length === 0) return; 
 
         const name = this.state.name;
         const rank = this.props.rank;
 
+        // Remove the last high score if there are already 15
         if(this.highScoreList.length >=15) this.highScoreList.pop(); 
 
+        // Add the new score and reorder the list
         this.highScoreList.push({ name: name, rank: rank});
         this.highScoreList.sort((player1, player2) => player2.rank - player1.rank);
 
+        // Save to local storage
         localStorage.data = JSON.stringify({
             scores: this.highScoreList
         })
 
+        // Get rid of the name input and show the nav buttons 
         this.setState({
             showHSInput: false,
         })

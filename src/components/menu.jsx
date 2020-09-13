@@ -7,7 +7,7 @@
   import React from "react";
   import { Link } from "react-router-dom";
 
-
+//Main
 export default function MainMenu(){
 
 
@@ -21,6 +21,7 @@ export default function MainMenu(){
                 <Link to="/instructions">Instructions</Link>
 
                 <Link to="/high-scores">High Scores</Link>
+                
             </nav>
         </section>
     )
