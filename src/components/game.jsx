@@ -29,7 +29,7 @@ export default class Game extends React.Component{
             currentSprite: null,
             loaded:true,
             // sequence: [this.randomColor()],
-            sequence: ["red",],
+            sequence: [this.randomColor()],
             currentGuess: 0,
             gameState: "start",
             score: 0,
