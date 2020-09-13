@@ -1,10 +1,12 @@
 #instructions{
 
-
     h1{
         color: aqua; 
     }
 
+    p, li {
+        font-size: 20px; 
+    }
     ul{
         width: 90%;
         margin-top: 30px;
@@ -16,5 +18,11 @@
 
     a{
         margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+        p,li{
+            font-size: 16px;
+        }
     }
 }

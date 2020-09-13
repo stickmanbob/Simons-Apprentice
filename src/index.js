@@ -8,17 +8,17 @@ import App from './App.jsx';
 if(!localStorage.data || !JSON.parse(localStorage.data)){
   localStorage.data = JSON.stringify({
     scores:[
-      { name: "Yendor", rank: 34 },
-      { name: "Elon", rank: 32 },
-      { name: "Harry Dresden", rank:30 },
-      { name: "Glinda", rank: 28 },
-      { name: "Gandalf the White", rank: 26 },
-      { name: "Gandalf the Gray", rank: 24 },
-      { name: "Hermione", rank: 20 },
-      { name: "Oz", rank: 18 },
-      { name: "Steve", rank: 10 },
-      { name: "Alfred", rank: 8 },
-      { name: "Morty", rank: 4 }
+      { name: "Yendor", rank: 14 },
+      { name: "Elon", rank: 13 },
+      { name: "Harry Dresden", rank:12 },
+      { name: "Glinda", rank: 11 },
+      { name: "Gandalf the White", rank: 9 },
+      { name: "Gandalf the Gray", rank: 8 },
+      { name: "Hermione", rank: 6 },
+      { name: "Oz", rank: 5 },
+      { name: "Steve", rank: 3 },
+      { name: "Alfred", rank: 2 },
+      { name: "Morty", rank: 1 }
       
     ]
   })
