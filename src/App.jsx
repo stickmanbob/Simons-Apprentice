@@ -50,7 +50,17 @@ function App() {
   //If menu assets are not loaded, show a loading screen
   if(!menuLoaded){
     return (
-      <div>Loading...</div>
+      <div className="App">
+        <Header/>
+
+        <section>
+          <h1>Loading...</h1>
+
+          <div class="lds-circle"><div></div></div>
+        </section>
+        
+      
+      </div>
     )
   }
 

@@ -74,7 +74,7 @@ export default class Game extends React.Component{
         if(this.state.gameState !== 'simon-turn') this.setState({gameState: 'simon-turn'}); 
 
         //Pause before the sequence
-        this.sleep(500);
+        await this.sleep(500);
 
         //Play the current sequence
         for(let i = 0; i < this.state.sequence.length ; i++){
@@ -88,13 +88,19 @@ export default class Game extends React.Component{
             //Remove the Elemental, and control to the player if its the last one
 
             if(i === this.state.sequence.length-1){
-
+                
+                // Give a break, then pass control to the player
                 this.setState({
                     currentSprite: null,
+                }) 
+
+                await this.sleep(400); 
+
+                this.setState({
                     disableInputs: false,
                     gameState: "player-turn"
-                }) 
-                
+                })
+
             } else{
 
                 this.setState({ currentSprite: null, })
@@ -191,11 +197,16 @@ export default class Game extends React.Component{
                 await this.sleep(PLAYER_GIF_LENGTH);
 
                 // If that was the last item, go to the inter round screen
-                if(currentGuess === sequence.length -1){
+                if(currentGuess === sequence.length -1){ 
+
+                    this.setState({
+                        currentSprite: null
+                    })
                     
+                    await this.sleep(300);
+
                     this.setState({
                         gameState: "interRound",
-                        currentSprite: null,
                         score: this.state.score + 1,
                         disableInputs: true,
                     });
@@ -273,6 +284,7 @@ export default class Game extends React.Component{
         if(!this.props.loaded) return (
             <section>
                 <h1>Loading...</h1>
+                <div class="lds-circle"><div></div></div>
             </section>
         );
 

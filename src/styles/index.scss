@@ -13,6 +13,7 @@
 @import "./header.scss";
 @import "./mainMenu.scss";
 @import "./instructions.scss"; 
+@import "./loadingSpinner.scss"; 
 
 @font-face {
   font-family: Immortal;
@@ -62,7 +63,7 @@
     padding: 20px;
 
     padding-bottom: 40px;
-    
+
     border-radius: 10px;
     height: fit-content;
 

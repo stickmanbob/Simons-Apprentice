@@ -34,4 +34,5 @@ export const GAME_IMAGE_URLS = [
     require("../assets/blueOrb.png"),
     require("../assets/redOrb.png"),
     require("../assets/yellowOrb.png"),
+    require("../assets/parchment.jpeg")
 ]
