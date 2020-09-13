@@ -5,7 +5,7 @@ import App from './App.jsx';
 
 //Initialize high score list
 
-if(!JSON.parse(localStorage.data)){
+if(!localStorage.data || !JSON.parse(localStorage.data)){
   localStorage.data = JSON.stringify({
     scores:[
       { name: "Yendor", rank: 34 },
