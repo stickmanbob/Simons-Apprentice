@@ -285,7 +285,7 @@ export default class Game extends React.Component{
         if(!this.props.loaded) return (
             <section>
                 <h1>Loading...</h1>
-                <div class="lds-circle"><div></div></div>
+                <div className="lds-circle"><div></div></div>
             </section>
         );
 

@@ -38,7 +38,6 @@ export default class GameOver extends React.Component{
         //Fetch the current high scores
         this.highScoreList = JSON.parse(localStorage.data).scores;
 
-        console.log(this.highScoreList)
         // If the player's rank is higher than the lowest high score, or
         // there are fewer than 15 high scores, render the name input 
 

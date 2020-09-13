@@ -56,7 +56,7 @@ function App() {
         <section>
           <h1>Loading...</h1>
 
-          <div class="lds-circle"><div></div></div>
+          <div className="lds-circle"><div></div></div>
         </section>
         
       
@@ -66,7 +66,7 @@ function App() {
 
   // Don't show the header on the game screen if the device is too short
   let header = <Header />;
-  console.log(window.innerHeight)
+  
   if(window.innerHeight < 600){
     header = null;
   }
