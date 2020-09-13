@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 //Main
 
 export default function HighScores(){
-    
+
     let highScoreList = JSON.parse(localStorage.data).scores; 
  
     return(
