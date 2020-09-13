@@ -79,7 +79,7 @@ export default class GameOver extends React.Component{
                 <form>
                     <h3>Enter your name, Apprentice</h3>
                     <input onChange={this.handleNameChange} value={this.state.name} type="text"/>
-                    <input className="button" type="submit" onClick={this.updateHighScores}/>
+                    <input className="button" value="Done" type="submit" onClick={this.updateHighScores}/>
                 </form>
             )
         }

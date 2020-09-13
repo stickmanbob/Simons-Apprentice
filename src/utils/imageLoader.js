@@ -17,7 +17,5 @@ export default function preloadImages(urls, loadedCallback) {
             }
         }
     });
-
-
     
 }
