@@ -15,6 +15,7 @@
   //Components
   import GameOver from './gameOver';
   import SummoningCircle from './summoningCircle';
+  import Elemental from './elemental';
 
     
 //Main
@@ -27,7 +28,8 @@ export default class Game extends React.Component{
         this.state = {
             currentSprite: null,
             loaded:true,
-            sequence: [this.randomColor()],
+            // sequence: [this.randomColor()],
+            sequence: ["red",],
             currentGuess: 0,
             gameState: "start",
             score: 0,
@@ -36,12 +38,12 @@ export default class Game extends React.Component{
 
         // Create references to sprites we will use here
         this.sprites = {
-            red: <img className="elemental" src={require("../assets/redSprite.gif")} alt="red" />,
-            yellow: <img className="elemental" src={require("../assets/yellowSprite.gif")} alt="yellow" />,
-            green: <img className="elemental" src={require("../assets/greenSprite.gif")} alt="green" />,
-            blue: <img className="elemental" src={require("../assets/blueSprite.gif")} alt="blue" />,
+            red: <Elemental imageUrl={require("../assets/redSprite.png")}/>,
+            yellow: <Elemental imageUrl={require("../assets/yellowSprite.png")}/>,
+            green: <Elemental imageUrl={require("../assets/greenSprite.png")}/>,
+            blue: <Elemental imageUrl={require("../assets/blueSprite.png")}/>,
             fizzle: <img className="fizzle" src={require("../assets/fizzle.gif")} alt="fizzle!" />,
-        }
+        }   
         
 
         // Function Bindings

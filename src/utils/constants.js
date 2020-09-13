@@ -5,10 +5,10 @@
 
 
 // Length of Simon's elemental animations, in ms
-export const SIMON_GIF_LENGTH = 700;
+export const SIMON_GIF_LENGTH = 1000;
 
 // Length of Player's elemental animations, in ms
-export const PLAYER_GIF_LENGTH = 700;
+export const PLAYER_GIF_LENGTH = 1000;
 
 // Length of Fizzle animation, in ms
 export const FIZZLE_LENGTH = 1600;
@@ -24,10 +24,10 @@ export const MENU_IMG_URLS = [
 // All game image asset paths
 export const GAME_IMAGE_URLS = [
     require("../assets/fizzle.gif"),
-    require("../assets/redSprite.gif"),
-    require("../assets/yellowSprite.gif"),
-    require("../assets/greenSprite.gif"),
-    require("../assets/blueSprite.gif"),
+    require("../assets/redSprite.png"),
+    require("../assets/yellowSprite.png"),
+    require("../assets/greenSprite.png"),
+    require("../assets/blueSprite.png"),
     require("../assets/circle.jpg"),
     require("../assets/pentagram.png"),
     require("../assets/greenOrb.png"),
