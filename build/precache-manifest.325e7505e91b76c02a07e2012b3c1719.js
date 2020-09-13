@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4af6a03279d817c3669b95e85d13260a",
+    "revision": "abbc90d4fc58740722c4d6e574c38431",
     "url": "/Simons-Apprentice/index.html"
   },
   {
-    "revision": "b909e92faf4ce49db71e",
-    "url": "/Simons-Apprentice/static/css/main.95ad98d2.chunk.css"
+    "revision": "c6b82dda03b2cd6e372b",
+    "url": "/Simons-Apprentice/static/css/main.fd3fe7fc.chunk.css"
   },
   {
     "revision": "033764d93ad514d9474a",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Simons-Apprentice/static/js/2.ac5324b0.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b909e92faf4ce49db71e",
-    "url": "/Simons-Apprentice/static/js/main.d4b2eb7c.chunk.js"
+    "revision": "c6b82dda03b2cd6e372b",
+    "url": "/Simons-Apprentice/static/js/main.2f242463.chunk.js"
   },
   {
     "revision": "922ceb6c21db0893e10e",

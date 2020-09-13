@@ -18,7 +18,7 @@ export default function Instructions(){
 
             <p>You are an aspiring magician, and are fortunate enough to have
                 recently been accepted as an apprentice by Simon, one of the 
-                greatest sorcerors alive today. In order to earn his favor, you 
+                greatest sorcerers alive today. In order to earn his favor, you 
                 must rise through the ranks of his other apprentices by successfully
                 casting spells. But beware, one wrong step and your spell will fizzle, 
                 and Simon does not tolerate failure... 
