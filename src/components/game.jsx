@@ -10,7 +10,7 @@
 
   //Utils
   import React from 'react';
-  import { SIMON_GIF_LENGTH, PLAYER_GIF_LENGTH, FIZZLE_LENGTH, COLORS, IMAGE_URLS } from '../utils/constants';
+  import { SIMON_GIF_LENGTH, PLAYER_GIF_LENGTH, FIZZLE_LENGTH, COLORS, } from '../utils/constants';
 
   //Components
   import GameOver from './gameOver';

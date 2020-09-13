@@ -8,7 +8,7 @@
     import React, { useState, useEffect } from 'react';
     import './styles/index.scss';
     import preloadImages from './utils/imageLoader';
-    import { HashRouter, Switch, Route, Link } from 'react-router-dom';
+    import { HashRouter, Switch, Route } from 'react-router-dom';
     import { GAME_IMAGE_URLS, MENU_IMG_URLS } from './utils/constants';
 
   //Components
