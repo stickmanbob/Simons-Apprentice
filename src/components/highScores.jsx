@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 export default function HighScores(){
 
     // Get the high scores
-    let highScoreList = JSON.parse(localStorage.data).scores; 
+    let highScoreList = JSON.parse(localStorage.simonsAppData).scores; 
  
     return(
         <section id="high-scores">

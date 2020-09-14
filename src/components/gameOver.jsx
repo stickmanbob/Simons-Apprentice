@@ -36,7 +36,7 @@ export default class GameOver extends React.Component{
         const { rank } = this.props;
 
         //Fetch the current high scores
-        this.highScoreList = JSON.parse(localStorage.data).scores;
+        this.highScoreList = JSON.parse(localStorage.simonsAppData).scores;
 
         //Avoid bugs due to empty score lists
         let lastPlayer = this.highScoreList[this.highScoreList.length - 1] || {rank:0};
@@ -104,7 +104,7 @@ export default class GameOver extends React.Component{
         this.highScoreList.sort((player1, player2) => player2.rank - player1.rank);
 
         // Save to local storage
-        localStorage.data = JSON.stringify({
+        localStorage.simonsAppData = JSON.stringify({
             scores: this.highScoreList
         })
 
